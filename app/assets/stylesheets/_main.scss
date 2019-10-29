@@ -1,11 +1,3 @@
-.flash-box {
-  background-color: $light-blue;
-  color: white;
-  width: 100vw;
-  font-size: 1rem;
-  text-align: center;
-}
-
 .chat-side {
   width: 300px;
   color: $side-white;
@@ -37,7 +29,7 @@
   }
 
   .groups {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 120px);
     background-color: $groups-navy;
     padding: 20px 20px 0;
 
@@ -45,7 +37,6 @@
       color: $side-white;
       text-decoration: none;
       font-weight: bold;
-      padding-bottom: 40px;
 
       &__group-name {
         font-size: 15px;
@@ -54,6 +45,7 @@
 
       &__latest-message {
         font-size: 11px;
+        margin-bottom: 40px;
       }
     }
   }
@@ -101,7 +93,7 @@
   }
 
   .messages {
-    height: calc(100vh - 263px);
+    height: calc(100vh - 283px);
     padding: 46px 40px;
     background-color: $chat-white;
     overflow: scroll;
@@ -148,7 +140,7 @@
 
         &__text {
           height: 50px;
-          width: 92%;
+          width: 95%;
           padding: 0 40px 0 10px;
           color: $message-black;
           border-style: none;
