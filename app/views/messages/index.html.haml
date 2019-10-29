@@ -4,29 +4,22 @@
   .main-header
     .main-header__left
       .main-header__left__current-group
-        学習の友
+        =@group.name
       .main-header__left__member-list
-        Member : HTML CSS Ruby Rails
-    = link_to edit_group_path, class: "main-header__edit-btn" do
+        Member : 
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group), class: "main-header__edit-btn" do
       Edit
 
   .messages
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          Rails
-        .message__upper-info__date
-          2019/10/19(Mon)22:13:00
-      .message__text
-        モチベ上げてこうぜ！
+    = render @messages
 
   .form
-    %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/2873/messages", enctype: "multipart/form-data", method: "post"}
-      %input{name: "utf8", type: "hidden", value: "✓"}/
-      %input{name: "authenticity_token", type: "hidden", value: "6SAzJDZBEW7U83FADXtJV5BxEup8jNm/jbPLMAaOjFwwLiQLdD8e7I9EuCziwfsLYg/cVAkgBrzzrdFkAgb9Rg=="}/
+    = form_for [@group, @message], class: 'new_message' do |f|
       .input-box
-        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-        %label.input-box__image{for: "message_image"}
-          %i.fa.fa-image
-          %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
-      %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
