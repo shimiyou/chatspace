@@ -1,0 +1,10 @@
+.message
+  .message__upper-info
+    .message__upper-info__talker
+      = message.user.name
+    .message__upper-info__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .message__text
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url if message.image.present?
