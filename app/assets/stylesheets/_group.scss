@@ -100,9 +100,9 @@ li {
     float: left;
   }
   &__btn {
-    float: right;
     display: inline-block;
     cursor: pointer;
+    float: right;
     &--add {
       color: #38aef0;
     }
