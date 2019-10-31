@@ -32,6 +32,7 @@
     height: calc(100vh - 120px);
     background-color: $groups-navy;
     padding: 20px 20px 0;
+    overflow: scroll;
 
     .group {
       color: $side-white;

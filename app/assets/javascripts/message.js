@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function() {
                     </div>
                   </div>`
       return html;
-    }
+    };
 
     $('#new_message').on('submit', function(e){
       e.preventDefault();
@@ -57,6 +57,6 @@ $(document).on('turbolinks:load', function() {
           cancelFlag = 0;
         },3000);
       }
-    })
+    });
   });
 });
