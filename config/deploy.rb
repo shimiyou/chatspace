@@ -1,6 +1,6 @@
 lock '3.11.2'
 
-set :application, 'ChatSpace'
+set :application, 'chatspace'
 
 set :repo_url,  'git@github.com:shimiyou/chatspace.git'
 
