@@ -47,16 +47,6 @@ $(document).on('turbolinks:load', function() {
       .fail(function() {
         alert('メッセージの送信に失敗しました');
       })
-
-      var cancelFlag = 0;
-      if( cancelFlag == 0 ){
-        cancelFlag = 1;
-        $('.submit-btn').toggle(1000);
-        $('.submit-btn').toggle(1000);
-        setTimeout(function() {
-          cancelFlag = 0;
-        },3000);
-      }
     });
 
     var reloadMessages = function() {
